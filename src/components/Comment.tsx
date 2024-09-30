@@ -7,8 +7,8 @@ import Replyy from "@/components/Reply";
 export default function Comment({
   userImagePath,
   username,
-  comText,
-  likes,
+  commentText,
+  likeNum,
   replies,
 }:CommentProps) {
   return (
@@ -29,11 +29,11 @@ export default function Comment({
                 {username}
               </span>
               <br />
-              <span style={{ color: "#E4E6EB" }}>{comText}</span>
-              { likes > 0 &&
+              <span style={{ color: "#E4E6EB" }}>{commentText}</span>
+              { likeNum > 0 &&
                 <div className="d-flex align-items-center gap-1">
                   <img src="/like.svg" width={20}></img>
-                  <span style={{ color: "#B0B3B8" }}>{likes} คน</span>
+                  <span style={{ color: "#B0B3B8" }}>{likeNum} คน</span>
                 </div>
               }
             </div>

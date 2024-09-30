@@ -1,18 +1,18 @@
 "use client";
 
-import { PostOwnerProps } from "@/libs/types"
+import { PostOwnnerProps } from "@/libs/types"
 import { CommentProps } from "@/libs/types"
 import { ReplyProps } from "@/libs/types"
 
 
 import Commentt from "@/components/Comment";
 
-export default function PostOwner({
+export default function PostOwnner({
   userImagePath,
   username,
-  text,
-  likes
-}:PostOwnerProps) {
+  commentText,
+  likeNum
+}:PostOwnnerProps) {
 
   return (
     <div>
@@ -31,12 +31,12 @@ export default function PostOwner({
             </div>
 
             <span className="text-white">
-              {text}
+              {commentText}
             </span>
-            { likes > 0 &&
+            { likeNum > 0 &&
             <div className="d-flex align-items-center gap-1">
               <img src="/like.svg" width={20}></img>
-              <span style={{ color: "#B0B3B8" }}>{likes} คน</span>
+              <span style={{ color: "#B0B3B8" }}>{likeNum} คน</span>
             </div>
             }
             <hr className="m-0 border" />

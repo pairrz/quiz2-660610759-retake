@@ -1,19 +1,21 @@
 "use client";
 
-import PostOwner from "@/components/PostOwnner";
+import { PostOwnnerProps } from "@/libs/types"
+import { CommentProps } from "@/libs/types"
+import { ReplyProps } from "@/libs/types"
+import { comments } from "@/libs/comments"
+
 import Commentt from "@/components/Comment";
-import { PostOwnerProps } from "@/libs/types";
-import { CommentProps } from "@/libs/types";
-import { comments } from "@/libs/comments";
-import { ReplyProps } from "@/libs/types";
+
+import PostOwnnerr from "@/components/PostOwnner";
 
 export default function Home() {
 
-  const postOwner: PostOwnerProps = 
+  const postOwner: PostOwnnerProps = 
   {userImagePath : "/profileImages/me.jpg",
     username : "Dararat Buayim 660610759" ,
-    text : "Quiz ง่ายจังเลยครับ ขอยาก ๆ กว่านี้ได้ไหม #261207" ,
-    likes : 999};
+    commentText : "ท้อแทร่มากกกกกๆๆๆๆ" ,
+    likeNum : 999};
 
 
   return (
@@ -27,7 +29,7 @@ export default function Home() {
         className="mx-auto p-3 rounded rounded-3 shadow-sm"
       >
         {/* Post Owner Example*/}
-        <PostOwner {...postOwner}/>
+        <PostOwnnerr {...postOwner}/>
 
         {comments.map((comment:CommentProps) => (<Commentt key = {comment.username} {...comment} />))}
 
